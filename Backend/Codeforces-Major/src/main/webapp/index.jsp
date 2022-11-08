@@ -1,0 +1,52 @@
+<%
+	if(session.getAttribute("name")==null){
+		response.sendRedirect("login.jsp");
+	}
+%>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CF MultiTasker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <link rel="stylesheet" href="./Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1 id="heading">CodeForces MultiTasker</h1>
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <div id="all">
+                        <button class="btn btn-outline-light cf2" onclick="createInfo()">Get User Info</button>
+                        <button class="btn btn-outline-light cf2" onclick="getContestDetails()">Upcoming
+                            Contests</button>
+                        <button class="btn btn-outline-light cf2" onclick="createSub()">Latest Submission</button>
+                        <button class="btn btn-outline-light cf2" onclick="createProb()">Practice Problems</button>
+                    </div>
+                </div>
+            </nav>
+            <br>
+            <h4 id="header" style="padding-left: 10px;font-weight: bold;">Input Area-</h4>
+            <hr id="mod">
+            <div id="combine">
+                <h5 style="padding-left: 10px;"> Output Area-</h5>
+                <div id="content">
+                    <h6 id="msg"></h6>
+                </div>
+            </div>
+            <div class="container">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>
